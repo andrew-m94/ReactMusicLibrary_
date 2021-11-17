@@ -20,10 +20,16 @@ class App extends Component {
         })
     }
 
+    deleteRow = (rowToDelete) => {
+        axios.delete('http://127.0.0.1:8000/songs/' + rowToDelete +'/')
+        .then(alert('Song Deleted'));
+        this.getSongList();
+    }
+
     render() { 
         return ( 
             <div>
-                <MusicTable songs={this.state.songs}/>    
+                <MusicTable songs={this.state.songs} deleteRow={this.deleteRow}/>    
             </div>
         );
     }

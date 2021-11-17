@@ -1,6 +1,7 @@
 import React from 'react';
 
-function MusicTable(props) {
+const MusicTable = (props) => {
+    
     return ( 
         <div>
             <table>
@@ -23,6 +24,7 @@ function MusicTable(props) {
                             <td >{songs.album}</td>
                             <td >{songs.genre}</td>
                             <td >{songs.release_date}</td>
+                            <td><button onClick={() => props.deleteRow(songs.id)} >Delete</button></td>
                         </tr>
                     ))}
                 </tbody>
