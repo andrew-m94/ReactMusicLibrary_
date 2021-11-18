@@ -18,6 +18,13 @@ class AddSongForm extends Component {
                 release_date: '',
             }
         }
+        this.emptyState = { 
+            title: '',
+            artist: '',
+            album: '',
+            genre: '',
+            release_date: '',
+        }
     }
 
     handleChange = (event) => {
@@ -40,11 +47,14 @@ class AddSongForm extends Component {
     handleSubmit = (event) => {
         event.preventDefault();
         this.props.addSong(this.state);
+        this.setState(
+            () => this.emptyState
+        )
     }
 
     render() { 
         return ( 
-            <form onSubmit={(event) => this.handleSubmit(event)}>
+            <form id="addSongForm" onSubmit={(event) => this.handleSubmit(event)}>
                 <h1>Add Song</h1>
                 <div>
                     <label>Title</label>
