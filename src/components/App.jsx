@@ -15,7 +15,7 @@ class App extends Component {
     }
 
     async getSongList(){
-        let response = await axios.get('http://127.0.0.1:8000/music/');
+        let response = await axios.get('http://127.0.0.1:8000/music/')
         this.setState({
             songs: response.data
         })
@@ -23,7 +23,15 @@ class App extends Component {
 
     deleteRow = (rowToDelete) => {
         axios.delete('http://127.0.0.1:8000/songs/' + rowToDelete +'/')
-        .then(alert('Song Deleted'));
+        .then(res => console.log(res), alert('Song Deleted'))
+        .catch(err => console.log(err));
+        this.getSongList();
+    }
+
+    addSong = (songToAdd) => {
+        axios.post('http://127.0.0.1:8000/music/', songToAdd)
+        .then(res => console.log(res), alert('Song Added'))
+        .catch(err => console.log(err));
         this.getSongList();
     }
 
@@ -32,7 +40,7 @@ class App extends Component {
             <div>
                 <MusicTable songs={this.state.songs} deleteRow={this.deleteRow}/>
                 <br />
-                <AddSongForm />    
+                <AddSongForm addSong={this.addSong}/>    
             </div>
         );
     }
