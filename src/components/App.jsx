@@ -11,11 +11,12 @@ class App extends Component {
             songs: []
         }
     }
+
     componentDidMount(){
         this.getSongList();
     }
 
-    async getSongList(){
+    getSongList = async () => {
         let response = await axios.get('http://127.0.0.1:8000/music/')
         this.setState({
             songs: response.data
@@ -39,6 +40,7 @@ class App extends Component {
     filteredSearch = (searchBy, searchFor) => {
         let cloneState = this.state.songs
         let newState = {}
+        
         switch(searchBy){
             case 'title':
                 newState = cloneState.filter(song => song.title.includes(searchFor))
@@ -50,36 +52,46 @@ class App extends Component {
                 break;
             case 'artist':
                 newState = cloneState.filter(song => song.artist.includes(searchFor))
-                .map(songs => (songs))
-                console.log(newState)
+                .map(songs => (songs));
+                console.log(newState);
+                this.setState({
+                    songs: newState
+                });
                 break;
             case 'album':
                 newState = cloneState.filter(song => song.album.includes(searchFor))
-                .map(songs => (songs))
-                console.log(newState)
+                .map(songs => (songs));
+                console.log(newState);
+                this.setState({
+                    songs: newState
+                });
                 break;
             case 'genre':
                 newState = cloneState.filter(song => song.genre.includes(searchFor))
-                .map(songs => (songs))
-                console.log(newState)
+                .map(songs => (songs));
+                console.log(newState);
+                this.setState({
+                    songs: newState
+                });
                 break;
             case 'release_date':
                 newState = cloneState.filter(song => song.release_date.includes(searchFor))
-                .map(songs => (songs))
-                console.log(newState)
+                .map(songs => (songs));
+                console.log(newState);
+                this.setState({
+                    songs: newState
+                });
                 break;
                 default:
                     break;
         }
-        
-        console.log(this.songs);
-        
     }
 
     render() { 
         return ( 
             <div>
-                <MusicTable songs={this.state.songs} deleteRow={this.deleteRow}/><SearchBar filteredSearch={this.filteredSearch} />
+                <MusicTable songs={this.state.songs} deleteRow={this.deleteRow}/>
+                <SearchBar filteredSearch={this.filteredSearch} getSongList={this.getSongList}/>
                 <br />
                 <AddSongForm addSong={this.addSong}/> 
             </div>
