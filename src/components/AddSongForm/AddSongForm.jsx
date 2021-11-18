@@ -39,6 +39,7 @@ class AddSongForm extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
+        this.props.addSong(this.state);
     }
 
     render() { 
