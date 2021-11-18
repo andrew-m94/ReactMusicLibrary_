@@ -36,12 +36,52 @@ class App extends Component {
         this.getSongList();
     }
 
+    filteredSearch = (searchBy, searchFor) => {
+        let cloneState = this.state.songs
+        let newState = {}
+        switch(searchBy){
+            case 'title':
+                newState = cloneState.filter(song => song.title.includes(searchFor))
+                .map(songs => (songs));
+                console.log(newState);
+                this.setState({
+                    songs: newState
+                })
+                break;
+            case 'artist':
+                newState = cloneState.filter(song => song.artist.includes(searchFor))
+                .map(songs => (songs))
+                console.log(newState)
+                break;
+            case 'album':
+                newState = cloneState.filter(song => song.album.includes(searchFor))
+                .map(songs => (songs))
+                console.log(newState)
+                break;
+            case 'genre':
+                newState = cloneState.filter(song => song.genre.includes(searchFor))
+                .map(songs => (songs))
+                console.log(newState)
+                break;
+            case 'release_date':
+                newState = cloneState.filter(song => song.release_date.includes(searchFor))
+                .map(songs => (songs))
+                console.log(newState)
+                break;
+                default:
+                    break;
+        }
+        
+        console.log(this.songs);
+        
+    }
+
     render() { 
         return ( 
             <div>
-                <MusicTable songs={this.state.songs} deleteRow={this.deleteRow}/><SearchBar />
+                <MusicTable songs={this.state.songs} deleteRow={this.deleteRow}/><SearchBar filteredSearch={this.filteredSearch} />
                 <br />
-                <AddSongForm addSong={this.addSong}/>    
+                <AddSongForm addSong={this.addSong}/> 
             </div>
         );
     }
