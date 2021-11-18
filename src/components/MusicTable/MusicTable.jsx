@@ -4,6 +4,7 @@ const MusicTable = (props) => {
     
     return ( 
         <div>
+            <h1>Music Table</h1>
             <table>
                 <thead>
                 <tr>
