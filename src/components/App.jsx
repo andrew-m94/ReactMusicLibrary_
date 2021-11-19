@@ -3,6 +3,7 @@ import axios from 'axios';
 import MusicTable from './MusicTable/MusicTable';
 import AddSongForm from './AddSongForm/AddSongForm';
 import SearchBar from './SearchBar/SearchBar';
+import Footer from './Footer/Footer';
 import './App.css';
 
 class App extends Component {
@@ -95,6 +96,7 @@ class App extends Component {
                 <SearchBar filteredSearch={this.filteredSearch} getSongList={this.getSongList}/>
                 <br />
                 <AddSongForm addSong={this.addSong}/> 
+                <Footer />
             </div>
         );
     }

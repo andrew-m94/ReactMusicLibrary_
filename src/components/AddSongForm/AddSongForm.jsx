@@ -55,33 +55,33 @@ class AddSongForm extends Component {
 
     render() { 
         return ( 
-            <form id="addSongForm" onSubmit={(event) => this.handleSubmit(event)}>
+            <form id="addSongForm" class="song-form" onSubmit={(event) => this.handleSubmit(event)}>
                 <h1>Add Song</h1>
-                <div class="song-form">
+                <div class="form-div">
                     <label>Title: </label>
                     <input type="text" name="title" placeholder="Bohemian Rhapsody" onChange={this.handleChange} value={this.state.title} />
                 </div>
                 {this.state.errors.title ? <p style={{color:'red'}}>{this.state.errors.title}</p> : ''}
                 <br/>
-                <div class="song_form">
+                <div class="form-div">
                     <label>Artist: </label>
                     <input type="text" name="artist" placeholder="Queen" onChange={this.handleChange} value={this.state.artist} />
                 </div>
                 {this.state.errors.artist ? <p style={{color:'red'}}>{this.state.errors.artist}</p> : ''}
                 <br/>
-                <div class="song_form">
+                <div class="form-div">
                     <label>Album: </label>
                     <input type="text" name="album" placeholder="A Night at the Opera" onChange={this.handleChange} value={this.state.album} />
                 </div>
                 {this.state.errors.album ? <p style={{color:'red'}}>{this.state.errors.album}</p> : ''}
                 <br/>
-                <div class="song_form">
+                <div class="form-div">
                     <label>Genre: </label>
                     <input type="text" name="genre" placeholder="hard rock" onChange={this.handleChange} value={this.state.genre} />
                 </div>
                 {this.state.errors.genre ? <p style={{color:'red'}}>{this.state.errors.genre}</p> : ''}
                 <br/>
-                <div class="song_form">
+                <div class="form-div">
                     <label>Release Date: </label>
                     <input type="text" name="release_date" placeholder="1975-10-31" onChange={this.handleChange} value={this.state.release_date} />
                 </div>
