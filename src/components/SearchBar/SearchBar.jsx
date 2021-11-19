@@ -5,7 +5,6 @@ const SearchBar = (props) => {
 
     let handleSubmit = (event) => {
         event.preventDefault();
-        alert('search');
         let searchBy = document.getElementById('searchBy').value;
         let searchFor = document.getElementById('searchFor').value;
         console.log(searchBy);
