@@ -35,6 +35,18 @@ class AddSongForm extends Component {
             case 'title':
                 errors.title = event.target.value.length < 1 ? "Please enter a song title" : null;
                 break;
+            case 'artist':
+                errors.title = event.target.value.length < 1 ? "Please enter a music artist" : null;
+                break;
+            case 'album':
+                errors.title = event.target.value.length < 1 ? "Please enter a album name" : null;
+                break;
+            case 'genre':
+                errors.title = event.target.value.length < 1 ? "Please enter a music genre" : null;
+                break;
+            case 'release_date':
+                errors.title = event.target.value.length < 1 ? "Please enter a release date" : null;
+                break;   
                 default:
                     break;
         }
