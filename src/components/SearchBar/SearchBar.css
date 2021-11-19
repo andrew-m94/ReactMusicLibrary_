@@ -1,0 +1,21 @@
+.search_reset {
+    margin-left: 1em;
+}
+
+.for {
+    margin-left: 1em;
+}
+
+.search-form{
+    font-size: 20px;
+}
+
+.dropdown {
+    padding: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    background-color: #f1f1f1;
+  }
+

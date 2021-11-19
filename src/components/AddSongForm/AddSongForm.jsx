@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './AddSongForm.css';
 
 class AddSongForm extends Component {
     constructor(props) {
@@ -56,33 +57,33 @@ class AddSongForm extends Component {
         return ( 
             <form id="addSongForm" onSubmit={(event) => this.handleSubmit(event)}>
                 <h1>Add Song</h1>
-                <div>
+                <div class="song-form">
                     <label>Title: </label>
-                    <input type="text" name="title" onChange={this.handleChange} value={this.state.title} />
+                    <input type="text" name="title" placeholder="Bohemian Rhapsody" onChange={this.handleChange} value={this.state.title} />
                 </div>
                 {this.state.errors.title ? <p style={{color:'red'}}>{this.state.errors.title}</p> : ''}
                 <br/>
-                <div>
+                <div class="song_form">
                     <label>Artist: </label>
-                    <input type="text" name="artist" onChange={this.handleChange} value={this.state.artist} />
+                    <input type="text" name="artist" placeholder="Queen" onChange={this.handleChange} value={this.state.artist} />
                 </div>
                 {this.state.errors.artist ? <p style={{color:'red'}}>{this.state.errors.artist}</p> : ''}
                 <br/>
-                <div>
+                <div class="song_form">
                     <label>Album: </label>
-                    <input type="text" name="album" onChange={this.handleChange} value={this.state.album} />
+                    <input type="text" name="album" placeholder="A Night at the Opera" onChange={this.handleChange} value={this.state.album} />
                 </div>
                 {this.state.errors.album ? <p style={{color:'red'}}>{this.state.errors.album}</p> : ''}
                 <br/>
-                <div>
+                <div class="song_form">
                     <label>Genre: </label>
-                    <input type="text" name="genre" onChange={this.handleChange} value={this.state.genre} />
+                    <input type="text" name="genre" placeholder="hard rock" onChange={this.handleChange} value={this.state.genre} />
                 </div>
                 {this.state.errors.genre ? <p style={{color:'red'}}>{this.state.errors.genre}</p> : ''}
                 <br/>
-                <div>
+                <div class="song_form">
                     <label>Release Date: </label>
-                    <input type="text" name="release_date" onChange={this.handleChange} value={this.state.release_date} />
+                    <input type="text" name="release_date" placeholder="1975-10-31" onChange={this.handleChange} value={this.state.release_date} />
                 </div>
                 {this.state.errors.release_date ? <p style={{color:'red'}}>{this.state.errors.release_date}</p> : ''}
                 <br/>

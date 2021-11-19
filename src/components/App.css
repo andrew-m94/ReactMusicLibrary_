@@ -1,0 +1,36 @@
+h1 {
+    font-family: "Esteban";
+    color: white;
+}
+
+body {
+    background-color:black;
+    width: 90%;
+    height: 100%;
+    font-family: "Montserrat";
+    color: white;
+    margin: auto;
+    padding-bottom: 50px;
+   }
+
+button {
+    background-color: #6a518f;
+    border: none;
+    color: black;
+    padding: 8px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #8369aa
+}
+
+input{
+    font-size: 16px;
+    padding: 4px;
+    border: none;
+    border-radius: 4px;
+}

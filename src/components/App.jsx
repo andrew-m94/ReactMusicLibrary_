@@ -3,6 +3,7 @@ import axios from 'axios';
 import MusicTable from './MusicTable/MusicTable';
 import AddSongForm from './AddSongForm/AddSongForm';
 import SearchBar from './SearchBar/SearchBar';
+import './App.css';
 
 class App extends Component {
     constructor(props) {
@@ -89,7 +90,7 @@ class App extends Component {
 
     render() { 
         return ( 
-            <div>
+            <div class="container">
                 <MusicTable songs={this.state.songs} deleteRow={this.deleteRow}/>
                 <SearchBar filteredSearch={this.filteredSearch} getSongList={this.getSongList}/>
                 <br />
