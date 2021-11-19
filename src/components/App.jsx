@@ -40,12 +40,12 @@ class App extends Component {
     }
 
     filteredSearch = (searchBy, searchFor) => {
-        let cloneState = this.state.songs
-        let newState = {}
+        let cloneState = this.state.songs;
+        let newState = {};
         
         switch(searchBy){
             case 'title':
-                newState = cloneState.filter(song => song.title.includes(searchFor))
+                newState = cloneState.filter(song => song.title.toLowerCase().includes(searchFor.toLowerCase()))
                 .map(songs => (songs));
                 console.log(newState);
                 this.setState({
@@ -53,7 +53,7 @@ class App extends Component {
                 })
                 break;
             case 'artist':
-                newState = cloneState.filter(song => song.artist.includes(searchFor))
+                newState = cloneState.filter(song => song.artist.toLowerCase().includes(searchFor.toLowerCase()))
                 .map(songs => (songs));
                 console.log(newState);
                 this.setState({
@@ -61,7 +61,7 @@ class App extends Component {
                 });
                 break;
             case 'album':
-                newState = cloneState.filter(song => song.album.includes(searchFor))
+                newState = cloneState.filter(song => song.album.toLowerCase().includes(searchFor.toLowerCase()))
                 .map(songs => (songs));
                 console.log(newState);
                 this.setState({
@@ -69,7 +69,7 @@ class App extends Component {
                 });
                 break;
             case 'genre':
-                newState = cloneState.filter(song => song.genre.includes(searchFor))
+                newState = cloneState.filter(song => song.genre.toLowerCase().includes(searchFor.toLowerCase()))
                 .map(songs => (songs));
                 console.log(newState);
                 this.setState({
